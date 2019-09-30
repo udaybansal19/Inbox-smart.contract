@@ -7,7 +7,7 @@ const web3 = new Web3(provider);
 const {interface,bytecode} = require('../compile');
 
 
-
+ 
 let accounts;
 let inbox;
 const INITIAL_STRING = 'Hi there!';
