@@ -7,9 +7,6 @@ const provider = new HDWalletProvider(
  'https://rinkeby.infura.io/v3/774fc39457b34e77bf31de8d2046d404'
 );
 
-const options = {
-    transactionConfirmationBlocks: 1
-  };
 const web3 = new Web3(provider,null,options);
 
 const deploy = async () => {
@@ -19,7 +16,7 @@ const deploy = async () => {
     const result = await new web3.eth.Contract(JSON.parse(interface))
               .deploy({data : bytecode, arguments : ['Hi there!']})
               .send({from: accounts[0],
-              gas: 6000000
+              gas: 3000000,
               });
 
               result.setProvider(provider);
